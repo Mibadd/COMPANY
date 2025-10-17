@@ -18,7 +18,7 @@ const ContactForm: React.FC = () => {
     };
 
     return (
-        <section id="contact" className="bg-white py-20">
+        <section id="contact" className="bg-blue-50 py-20">
             <div className="container mx-auto px-6">
                 <h2 className="text-3xl font-bold text-center mb-12">Hubungi Kami</h2>
                 <div className="max-w-2xl mx-auto bg-gray-50 p-8 rounded-lg shadow-lg">

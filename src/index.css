@@ -1,1 +1,44 @@
 @import "tailwindcss";
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+:root {
+    --swiper-theme-color: #2563eb;
+    --swiper-navigation-size: 28px;
+}
+
+/* Styling untuk Panah Navigasi (Kanan & Kiri) */
+.swiper-button-next,
+.swiper-button-prev {
+    color: white !important;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    width: var(--swiper-navigation-size) !important;
+    height: var(--swiper-navigation-size) !important;
+    transition: background-color 0.3s ease;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size: 16px !important;
+    font-weight: bold;
+}
+
+/* Styling untuk Titik Navigasi (Pagination) */
+.swiper-pagination-bullet {
+    background-color: white !important;
+    opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: white !important;
+    opacity: 1;
+}

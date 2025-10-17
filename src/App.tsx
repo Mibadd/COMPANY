@@ -4,7 +4,9 @@ import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import AboutSection from './components/AboutSection';
 import ServicesSection from './components/ServicesSection';
+import PortfolioSection from './components/PortfolioSection';
 import TeamSection from './components/TeamSection';
+import NewsSection from './components/NewsSection';
 import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
 
@@ -16,7 +18,9 @@ function App() {
         <HeroSection />
         <AboutSection />
         <ServicesSection />
+        <PortfolioSection />
         <TeamSection />
+        <NewsSection />
         <ContactForm />
       </main>
       <Footer />
