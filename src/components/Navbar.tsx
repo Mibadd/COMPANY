@@ -33,7 +33,7 @@ const Navbar: React.FC = () => {
     const getLinkClass = (id: string, isMobile: boolean = false): string => {
         const baseClass = isMobile ? 'block py-3 text-lg' : '';
         const activeClass = 'text-blue-600 font-semibold';
-        const inactiveClass = 'text-gray-600 hover:text-blue-600';
+        const inactiveClass = 'text-gray-600 hover:text-blue-600 transition-colors duration-300';
         return `${baseClass} ${activeLink === id ? activeClass : inactiveClass}`;
     };
 
