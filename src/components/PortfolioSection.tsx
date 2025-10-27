@@ -1,9 +1,8 @@
 // src/components/PortfolioSection.tsx
 
 import React from 'react';
-import { FaExternalLinkAlt } from 'react-icons/fa'; // Ikon untuk link eksternal
+import { FaExternalLinkAlt } from 'react-icons/fa';
 
-// Interface untuk properti setiap item portofolio
 interface PortfolioItemProps {
     imageUrl: string;
     category: string;
@@ -40,7 +39,6 @@ const PortfolioCard: React.FC<PortfolioItemProps> = ({ imageUrl, category, title
 };
 
 const PortfolioSection: React.FC = () => {
-    // Data portofolio placeholder. Ganti dengan data proyek Anda.
     const portfolioItems = [
         {
             imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1740&auto=format&fit=crop',
@@ -65,10 +63,12 @@ const PortfolioSection: React.FC = () => {
     return (
         <section id="portfolio" className="bg-white py-20">
             <div className="container mx-auto px-6">
-                <h2 className="text-3xl font-bold text-center mb-12">Portofolio Kami</h2>
+                <h2 className="text-3xl font-bold text-center mb-12" data-aos="fade-up">Portofolio Kami</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {portfolioItems.map((item, index) => (
-                        <PortfolioCard key={index} {...item} />
+                        <div key={index} data-aos="fade-up" data-aos-delay={`${100 * (index + 1)}`}>
+                            <PortfolioCard {...item} />
+                        </div>
                     ))}
                 </div>
             </div>

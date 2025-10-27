@@ -18,7 +18,6 @@ const TeamMemberCard: React.FC<TeamMemberProps> = ({ name, role, imageUrl }) => 
                 backgroundPosition: 'center'
             }}
         >
-            {/* Ganti class di div ini untuk efek gradien */}
             <div
                 className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent 
                            flex flex-col justify-end p-6
@@ -44,10 +43,12 @@ const TeamSection: React.FC = () => {
     return (
         <section id="team" className="bg-blue-50 py-20">
             <div className="container mx-auto px-6">
-                <h2 className="text-3xl font-bold text-center mb-12">Tim Profesional Kami</h2>
+                <h2 className="text-3xl font-bold text-center mb-12" data-aos="fade-up">Tim Profesional Kami</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     {teamMembers.map((member, index) => (
-                        <TeamMemberCard key={index} {...member} />
+                        <div key={index} data-aos="fade-up" data-aos-delay={`${100 * (index + 1)}`}>
+                            <TeamMemberCard {...member} />
+                        </div>
                     ))}
                 </div>
             </div>
