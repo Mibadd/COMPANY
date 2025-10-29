@@ -1,20 +1,21 @@
 // src/App.tsx
 
-import { useEffect } from 'react';
+import { useEffect, lazy, Suspense } from 'react';
 import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import AboutSection from './components/AboutSection';
 import ServicesSection from './components/ServicesSection';
-import PortfolioSection from './components/PortfolioSection';
-import TeamSection from './components/TeamSection';
-import NewsSection from './components/NewsSection';
-import ContactForm from './components/ContactForm';
-import Footer from './components/Footer';
+
+const PortfolioSection = lazy(() => import('./components/PortfolioSection'));
+const TeamSection = lazy(() => import('./components/TeamSection'));
+const NewsSection = lazy(() => import('./components/NewsSection'));
+const ContactForm = lazy(() => import('./components/ContactForm'));
+const Footer = lazy(() => import('./components/Footer'));
 
 function App() {
-
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -30,12 +31,17 @@ function App() {
         <HeroSection />
         <AboutSection data-aos="fade-up" />
         <ServicesSection data-aos="fade-up" />
-        <PortfolioSection data-aos="fade-up" />
-        <TeamSection data-aos="fade-up" />
-        <NewsSection data-aos="fade-up" />
-        <ContactForm data-aos="fade-up" />
+
+        <Suspense fallback={<div className="text-center p-10">Memuat...</div>}>
+          <PortfolioSection data-aos="fade-up" />
+          <TeamSection data-aos="fade-up" />
+          <NewsSection data-aos="fade-up" />
+          <ContactForm data-aos="fade-up" />
+        </Suspense>
       </main>
-      <Footer />
+      <Suspense fallback={null}>
+        <Footer />
+      </Suspense>
     </div>
   );
 }
