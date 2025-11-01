@@ -18,8 +18,15 @@ const TeamMemberCard: React.FC<TeamMemberProps> = ({ name, role, imageUrl }) => 
                 backgroundPosition: 'center'
             }}
         >
+
+            <img
+                src={imageUrl}
+                alt={name}
+                className="sr-only"
+            />
+
             <div
-                className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent 
+                className="absolute inset-0 bg-linear-to-t from-black/80 to-transparent 
                            flex flex-col justify-end p-6
                            opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"
             >
@@ -34,10 +41,10 @@ const TeamMemberCard: React.FC<TeamMemberProps> = ({ name, role, imageUrl }) => 
 
 const TeamSection: React.FC = () => {
     const teamMembers = [
-        { name: 'John Doe', role: 'CEO & Founder', imageUrl: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=1887&auto-format&fit=crop' },
-        { name: 'Jane Smith', role: 'CTO', imageUrl: 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=1887&auto-format&fit=crop' },
-        { name: 'Peter Jones', role: 'Lead Developer', imageUrl: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1887&auto-format&fit=crop' },
-        { name: 'Lisa Wang', role: 'UI/UX Designer', imageUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1887&auto-format&fit=crop' },
+        { name: 'John Doe', role: 'CEO & Founder', imageUrl: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=1887&auto-format&fit-crop' },
+        { name: 'Jane Smith', role: 'CTO', imageUrl: 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=1887&auto-format&fit-crop' },
+        { name: 'Peter Jones', role: 'Lead Developer', imageUrl: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1887&auto-format&fit-crop' },
+        { name: 'Lisa Wang', role: 'UI/UX Designer', imageUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1887&auto-format&fit-crop' },
     ];
 
     return (

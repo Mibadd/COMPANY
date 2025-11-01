@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
     return (
         <footer className="bg-slate-900 text-gray-300 py-8">
             <div className="container mx-auto px-6 text-center">
-                <p>&copy; {currentYear} MyCompany. Semua Hak Cipta Dilindungi.</p>
+                <p>&copy; {currentYear} Company Profile. Semua Hak Cipta Dilindungi.</p>
                 <div className="flex justify-center space-x-6 mt-4">
                     <a
                         href="#"

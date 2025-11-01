@@ -15,11 +15,10 @@ const AboutSection: React.FC = () => {
                         />
                     </div>
 
-                    {/* Tambahkan data-aos="fade-up" di sini */}
                     <div className="md:w-2/3" data-aos="fade-up">
                         <h2 className="text-3xl font-bold mb-4 text-gray-800">Tentang Kami</h2>
                         <p className="text-gray-600 leading-relaxed mb-6">
-                            MyCompany adalah agensi digital yang berfokus pada penyediaan solusi teknologi inovatif. Sejak didirikan, kami telah berkomitmen untuk membantu klien mencapai tujuan bisnis mereka melalui pengembangan web, aplikasi seluler, dan desain yang berpusat pada pengguna.
+                            Company adalah agensi digital yang berfokus pada penyediaan solusi teknologi inovatif. Sejak didirikan, kami telah berkomitmen untuk membantu klien mencapai tujuan bisnis mereka melalui pengembangan web, aplikasi seluler, dan desain yang berpusat pada pengguna.
                         </p>
                         <p className="text-gray-600 leading-relaxed mb-8">
                             Visi kami adalah menjadi mitra teknologi terpercaya yang mendorong transformasi digital untuk bisnis di seluruh Indonesia.

@@ -41,7 +41,7 @@ const Navbar: React.FC = () => {
         <nav className="bg-white shadow-md sticky top-0 z-50">
             <div className="container mx-auto px-6 py-4 flex justify-between items-center">
                 <a href="#" className="font-bold text-2xl text-blue-600">
-                    MyCompany
+                    Company Profile
                 </a>
 
                 <div className="hidden md:flex space-x-6">
