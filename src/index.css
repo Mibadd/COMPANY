@@ -1,44 +1,90 @@
 @import "tailwindcss";
 
-html {
+@theme {
+  --font-display: "Bricolage Grotesque", system-ui, -apple-system, sans-serif;
+  --font-sans: "Geist", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-canvas: #F6F5F1;
+  --color-paper: #FFFFFF;
+  --color-stone-subtle: #ECEAE3;
+  --color-hairline: #DEDBD2;
+  --color-ink: #0C0E12;
+  --color-ink-elevated: #151922;
+  --color-ink-border: #262C3A;
+  --color-graphite: #3B404B;
+  --color-pewter: #59606D;
+  --color-silver-tint: #B6BDC9;
+  --color-cobalt: #1E40FF;
+  --color-cobalt-deep: #1530CC;
+  --color-cobalt-tint: #E9EDFF;
+  --color-signal-mint: #0D9468;
+}
+
+@layer base {
+  html {
     scroll-behavior: smooth;
-    scroll-padding-top: 80px;
+    scroll-padding-top: 88px;
+    font-family: var(--font-sans);
+    background-color: var(--color-canvas);
+    color: var(--color-ink);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.025em;
+    text-wrap: balance;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-cobalt);
+    outline-offset: 3px;
+  }
 }
 
-:root {
-    --swiper-theme-color: #2563eb;
-    --swiper-navigation-size: 28px;
+/* Presisi transisi eksponensial khas studio */
+.ease-studio {
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Styling untuk Panah Navigasi (Kanan & Kiri) */
-.swiper-button-next,
-.swiper-button-prev {
-    color: white !important;
-    background-color: rgba(0, 0, 0, 0.2);
-    border-radius: 50%;
-    width: var(--swiper-navigation-size) !important;
-    height: var(--swiper-navigation-size) !important;
-    transition: background-color 0.3s ease;
+/* Elevasi terukur tanpa ghost-border */
+.shadow-lifted {
+  box-shadow: 0 18px 40px -16px rgba(12, 14, 18, 0.16), 0 4px 12px -4px rgba(12, 14, 18, 0.06);
 }
 
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
-    background-color: rgba(0, 0, 0, 0.4);
+.shadow-stage {
+  box-shadow: 0 24px 56px -20px rgba(12, 14, 18, 0.28);
 }
 
-.swiper-button-next::after,
-.swiper-button-prev::after {
-    font-size: 16px !important;
-    font-weight: bold;
+/* Animasi progress bar slide aktif pada Hero Deck */
+@keyframes slideProgress {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
 }
 
-/* Styling untuk Titik Navigasi (Pagination) */
-.swiper-pagination-bullet {
-    background-color: white !important;
-    opacity: 0.5;
+.animate-slide-progress {
+  transform-origin: left center;
+  animation: slideProgress 5200ms linear forwards;
 }
 
-.swiper-pagination-bullet-active {
-    background-color: white !important;
-    opacity: 1;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

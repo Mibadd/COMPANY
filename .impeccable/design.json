@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-24T22:40:00+07:00",
+  "title": "Design System: ARKA Studio",
+  "extensions": {
+    "colorMeta": {
+      "electric-cobalt": {
+        "role": "primary",
+        "displayName": "Electric Cobalt",
+        "canonical": "#1E40FF",
+        "tonalRamp": ["#0A1559", "#10228C", "#1530CC", "#1E40FF", "#4D69FF", "#8599FF", "#BDC8FF", "#E9EDFF"]
+      },
+      "signal-mint": {
+        "role": "secondary",
+        "displayName": "Signal Mint",
+        "canonical": "#0D9468",
+        "tonalRamp": ["#053B29", "#085C40", "#0A7854", "#0D9468", "#2BB386", "#66CCA9", "#A6E5CF", "#E3F8F0"]
+      },
+      "alabaster-canvas": {
+        "role": "neutral",
+        "displayName": "Alabaster Canvas",
+        "canonical": "#F6F5F1",
+        "tonalRamp": ["#242320", "#45433E", "#6B6860", "#949087", "#BDB9B0", "#DEDBD2", "#ECEAE3", "#F6F5F1"]
+      },
+      "carbon-ink": {
+        "role": "neutral",
+        "displayName": "Carbon Ink",
+        "canonical": "#0C0E12",
+        "tonalRamp": ["#0C0E12", "#151922", "#262C3A", "#3B404B", "#59606D", "#88909E", "#B6BDC9", "#E6E9EF"]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display Hero",
+        "purpose": "Tesis pembuka halaman utama di seksi Hero."
+      },
+      "headline": {
+        "displayName": "Section Headline",
+        "purpose": "Judul utama setiap seksi tanpa kicker/eyebrow pendamping."
+      },
+      "title": {
+        "displayName": "Component Title",
+        "purpose": "Judul kartu studi kasus, spesifikasi layanan, dan artikel jurnal."
+      },
+      "body": {
+        "displayName": "Body Copy",
+        "purpose": "Teks narasi utama dan deskripsi kapabilitas dengan lebar maksimum 65ch."
+      },
+      "label": {
+        "displayName": "Technical Measurement Mono",
+        "purpose": "Angka metrik, durasi pengerjaan, tanggal rilis, dan tag teknologi."
+      }
+    },
+    "shadows": [
+      {
+        "name": "stage-elevation",
+        "value": "0 24px 56px -20px rgba(12, 14, 18, 0.28)",
+        "purpose": "Panggung interaktif Hero Showcase Deck dan jendela dialog studi kasus/artikel."
+      },
+      {
+        "name": "lifted-surface",
+        "value": "0 18px 40px -16px rgba(12, 14, 18, 0.16), 0 4px 12px -4px rgba(12, 14, 18, 0.06)",
+        "purpose": "Elevasi apung opsional untuk elemen melayang tanpa garis batas."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-studio",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Kurva transisi eksponensial halus untuk pembesaran gambar dan laci navigasi."
+      }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Action Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Tombol kapsul utama untuk memulai diskusi proyek dan mengirim formulir.",
+      "html": "<button class=\"ds-btn-primary\">Mulai Diskusi Proyek <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><line x1=\"7\" y1=\"17\" x2=\"17\" y2=\"7\"></line><polyline points=\"7 7 17 7 17 17\"></polyline></svg></button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 8px; background: #1E40FF; color: #FFFFFF; font-family: 'Geist', sans-serif; font-size: 14px; font-weight: 600; padding: 14px 24px; border: none; border-radius: 9999px; cursor: pointer; transition: background-color 0.2s ease; } .ds-btn-primary:hover { background: #1530CC; } .ds-btn-primary:focus-visible { outline: 2px solid #1E40FF; outline-offset: 3px; }"
+    },
+    {
+      "name": "Secondary Architectural Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Tombol pendamping berbingkai tipis di atas kanvas terang.",
+      "html": "<button class=\"ds-btn-secondary\">Lihat Studi Kasus</button>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; gap: 8px; background: #FFFFFF; color: #0C0E12; font-family: 'Geist', sans-serif; font-size: 14px; font-weight: 600; padding: 14px 24px; border: 1px solid #DEDBD2; border-radius: 9999px; cursor: pointer; transition: background-color 0.2s ease, border-color 0.2s ease; } .ds-btn-secondary:hover { background: #ECEAE3; border-color: #0C0E12; } .ds-btn-secondary:focus-visible { outline: 2px solid #1E40FF; outline-offset: 3px; }"
+    },
+    {
+      "name": "Filter & Topic Chip",
+      "kind": "chip",
+      "refersTo": "chip-active",
+      "description": "Kapsul pemilih kategori portofolio dan topik layanan pada formulir kontak.",
+      "html": "<button class=\"ds-chip\">Web Development <span class=\"ds-chip-count\">2</span></button>",
+      "css": ".ds-chip { display: inline-flex; align-items: center; gap: 8px; background: #1E40FF; color: #FFFFFF; font-family: 'Geist', sans-serif; font-size: 14px; font-weight: 500; padding: 8px 16px; border: none; border-radius: 9999px; cursor: pointer; transition: background-color 0.2s ease; } .ds-chip-count { font-family: 'JetBrains Mono', monospace; font-size: 12px; opacity: 0.85; } .ds-chip:hover { background: #1530CC; } .ds-chip:focus-visible { outline: 2px solid #1E40FF; outline-offset: 3px; }"
+    },
+    {
+      "name": "Consultation Text Input",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Kolom masukan teks berbingkai arsitektural untuk formulir diskusi proyek.",
+      "html": "<input class=\"ds-input\" type=\"email\" placeholder=\"nadia@perusahaan.id\" />",
+      "css": ".ds-input { width: 100%; background: #FFFFFF; color: #0C0E12; font-family: 'Geist', sans-serif; font-size: 15px; padding: 12px 16px; border: 1px solid #DEDBD2; border-radius: 12px; transition: border-color 0.2s ease; } .ds-input::placeholder { color: #59606D; } .ds-input:hover { border-color: #3B404B; } .ds-input:focus-visible { outline: 2px solid #1E40FF; outline-offset: 2px; border-color: #1E40FF; }"
+    },
+    {
+      "name": "Dark Case Study Card",
+      "kind": "card",
+      "refersTo": "card-dark",
+      "description": "Kartu studi kasus di panggung gelap Carbon Ink dengan tag teknologi monospasi.",
+      "html": "<article class=\"ds-card-dark\"><p class=\"ds-card-meta\">Startup Logistik · 2025</p><h3 class=\"ds-card-title\">Aplikasi Armada & Pelacakan Kurir</h3><p class=\"ds-card-body\"> Sinkronisasi pengiriman real-time untuk Android & iOS di jaringan tidak stabil.</p><span class=\"ds-card-tag\">React Native</span></article>",
+      "css": ".ds-card-dark { background: #151922; color: #F6F5F1; border: 1px solid #262C3A; border-radius: 16px; padding: 24px; transition: border-color 0.25s ease; } .ds-card-dark:hover { border-color: #B6BDC9; } .ds-card-meta { font-family: 'Geist', sans-serif; font-size: 12px; color: #B6BDC9; margin: 0; } .ds-card-title { font-family: 'Bricolage Grotesque', sans-serif; font-size: 22px; font-weight: 700; color: #FFFFFF; margin: 6px 0 10px; letter-spacing: -0.02em; } .ds-card-body { font-family: 'Geist', sans-serif; font-size: 14px; line-height: 1.6; color: #B6BDC9; margin: 0 0 16px; } .ds-card-tag { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 4px 10px; border-radius: 9999px; background: #0C0E12; color: #B6BDC9; border: 1px solid #262C3A; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Architectural Product Studio",
+    "overview": "Sistem visual ARKA Studio berangkat dari presisi studio rekayasa produk modern dan geometri hitam-putih pada lambang studio (^ akselerasi rekayasa di atas U wadah manusiawi). Permukaan membaca didominasi kanvas terang yang tenang dan hangat agar narasi teknis serta jurnal mudah dipindai pada pencahayaan ruang kerja siang hari, kemudian dipotong secara tegas oleh panggung gelap penuh pada area pameran karya (Hero Showcase Deck, Portofolio, dan Footer).\n\nSistem ini secara sadar menolak klise template agensi digital: tidak ada teks bergradien warna-warni, tidak ada eyebrow/kicker kecil di atas judul utama, tidak ada kartu berbayangan lebar yang ditumpuk dengan garis tepi tipis (ghost card), dan tidak ada deretan kotak ikon seragam. Setiap perubahan kepadatan atau kontras halaman menandai perubahan fungsi baca.",
+    "keyCharacteristics": [
+      "Ritme pergantian bidang skala penuh antara kanvas terang arsitektural dan panggung hitam pekat.",
+      "Tipografi display berkarakter kuat tanpa label pembuka di atas judul.",
+      "Satu aksen biru berenergi tinggi yang digunakan secara disiplin pada titik keputusan utama.",
+      "Pemisahan struktur melalui garis tipis terukur (1px) ketimbang kabut bayangan dekoratif.",
+      "Data durasi, tahun, dan metrik kuantitatif ditulis dalam huruf monospasi fungsional."
+    ],
+    "rules": [
+      {
+        "name": "The Decisive Cobalt Rule",
+        "body": "Warna aksen Electric Cobalt hanya muncul pada kontrol interaktif aktif, aksi konversi utama, dan sorotan metrik kunci—tidak pernah dijadikan latar seksi penuh atau hiasan tepi kartu.",
+        "section": "colors"
+      },
+      {
+        "name": "The Tinted Secondary Rule",
+        "body": "Di atas panggung gelap Carbon Ink, teks sekunder selalu menggunakan Silver Tint bernuansa dingin kebiruan, bukan abu-abu netral kusam.",
+        "section": "colors"
+      },
+      {
+        "name": "The Self-Sufficient Heading Rule",
+        "body": "Judul utama (h1, h2) wajib menyampaikan konteksnya sendiri tanpa tambahan kicker atau eyebrow huruf kapital kecil di atasnya.",
+        "section": "typography"
+      },
+      {
+        "name": "The Honest Monospace Rule",
+        "body": "JetBrains Mono hanya dipakai untuk metrik kuantitatif, rentang waktu, tanggal, alamat email teknis, dan nama teknologi—bukan sebagai dekorasi gaya teknis pada teks biasa.",
+        "section": "typography"
+      },
+      {
+        "name": "The Single Elevation Declaration Rule",
+        "body": "Setiap kontainer memilih salah satu: garis batas 1px tajam atau bayangan apung—tidak pernah menggabungkan garis tepi tipis dengan bayangan lembut lebar pada elemen yang sama.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do pertahankan pergantian kontras bidang penuh antara Alabaster Canvas, Pure Paper, dan Carbon Ink untuk menjaga ritme eksplorasi halaman.",
+      "Do tampilkan informasi kunci (nama proyek, jabatan anggota tim, kategori layanan) secara langsung tanpa menyembunyikannya di balik efek hover agar tetap terbaca di perangkat layar sentuh.",
+      "Do hubungkan setiap tombol konsultasi kontekstual pada layanan atau studi kasus agar langsung memilih topik yang relevan pada formulir kontak."
+    ],
+    "donts": [
+      "Don't menambahkan label eyebrow atau kicker huruf kapital kecil di atas judul h1 maupun h2.",
+      "Don't menggunakan teks bergradien atau garis tepi aksen tebal sebelah (border-left > 1px) pada kartu maupun kotak informasi.",
+      "Don't menumpuk kartu berbingkai di dalam kartu lain; gunakan garis pemisah 1px atau ruang kosong untuk mengelompokkan sub-informasi."
+    ]
+  }
+}

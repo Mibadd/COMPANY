@@ -1,66 +1,51 @@
-// src/components/TeamSection.tsx
-
 import React from 'react';
-
-interface TeamMemberProps {
-    name: string;
-    role: string;
-    imageUrl: string;
-}
-
-const TeamMemberCard: React.FC<TeamMemberProps> = ({ name, role, imageUrl }) => {
-    return (
-        <div
-            className="relative h-80 w-full rounded-lg overflow-hidden group shadow-lg"
-            style={{
-                backgroundImage: `url(${imageUrl})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center'
-            }}
-        >
-
-            <img
-                src={imageUrl}
-                alt={name}
-                className="sr-only"
-            />
-
-            <div
-                className="absolute inset-0 bg-linear-to-t from-black/80 to-transparent 
-                           flex flex-col justify-end p-6
-                           opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"
-            >
-                <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
-                    <h3 className="text-xl font-bold text-white">{name}</h3>
-                    <p className="text-blue-300">{role}</p>
-                </div>
-            </div>
-        </div>
-    );
-};
+import { TEAM_MEMBERS } from '../data/studioData';
 
 const TeamSection: React.FC = () => {
-    const teamMembers = [
-        { name: 'John Doe', role: 'CEO & Founder', imageUrl: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=1887&auto-format&fit-crop' },
-        { name: 'Jane Smith', role: 'CTO', imageUrl: 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=1887&auto-format&fit-crop' },
-        { name: 'Peter Jones', role: 'Lead Developer', imageUrl: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1887&auto-format&fit-crop' },
-        { name: 'Lisa Wang', role: 'UI/UX Designer', imageUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1887&auto-format&fit-crop' },
-    ];
+  return (
+    <section id="team" className="bg-paper py-20 lg:py-28 border-b border-hairline">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-end pb-12 border-b border-hairline">
+          <div className="lg:col-span-7">
+            <h2 className="font-display font-extrabold text-3xl sm:text-4xl lg:text-[2.65rem] text-ink leading-[1.12]">
+              Dipimpin praktisi yang terlibat langsung di setiap baris kode dan layar.
+            </h2>
+          </div>
+          <div className="lg:col-span-5">
+            <p className="text-graphite text-base leading-relaxed">
+              Tanpa lapisan birokrasi berlapis—Anda berdiskusi langsung dengan arsitek sistem,
+              engineer utama, dan desainer prinsipal yang mengerjakan produk Anda.
+            </p>
+          </div>
+        </div>
 
-    return (
-        <section id="team" className="bg-blue-50 py-20">
-            <div className="container mx-auto px-6">
-                <h2 className="text-3xl font-bold text-center mb-12" data-aos="fade-up">Tim Profesional Kami</h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    {teamMembers.map((member, index) => (
-                        <div key={index} data-aos="fade-up" data-aos-delay={`${100 * (index + 1)}`}>
-                            <TeamMemberCard {...member} />
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </section>
-    );
+        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {TEAM_MEMBERS.map((member) => (
+            <article key={member.id} className="group flex flex-col">
+              <div className="relative aspect-[4/5] w-full rounded-2xl overflow-hidden bg-stone-subtle border border-hairline">
+                <img
+                  src={member.imageUrl}
+                  alt={`${member.name} — ${member.role}`}
+                  loading="lazy"
+                  className="w-full h-full object-cover transition-transform duration-500 ease-studio group-hover:scale-[1.03]"
+                />
+                <span className="absolute bottom-3 left-3 font-mono text-xs px-2.5 py-1 rounded-full bg-paper/95 text-ink border border-hairline">
+                  {member.experience}
+                </span>
+              </div>
+
+              <div className="mt-4 flex flex-col">
+                <h3 className="font-display font-bold text-xl text-ink">{member.name}</h3>
+                <p className="text-sm font-semibold text-cobalt mt-0.5">{member.role}</p>
+                <p className="mt-2 text-xs font-medium text-pewter">{member.specialty}</p>
+                <p className="mt-2.5 text-sm text-graphite leading-relaxed">{member.bio}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default TeamSection;
